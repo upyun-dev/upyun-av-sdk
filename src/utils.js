@@ -15,7 +15,7 @@ let makeContentMD5 = (value) => {
 
 let curDt = () => {
   return new Date().toUTCString();
-}
+};
 
 export {
   makeContentMD5,

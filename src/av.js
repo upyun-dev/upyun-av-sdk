@@ -1,7 +1,7 @@
 'use strict';
 
 import crypto from 'crypto';
-import util from 'util';
+
 import request from 'request';
 import { makeSignature, makeContentMD5, curDt } from './utils';
 import querystring from 'querystring';
@@ -16,30 +16,30 @@ class AvPretreatment {
     this.STATUS = '/status/';
     this.RESULT = '/result/';
   }
-  pretreat(tasks, source, notify_url, callback) {
+  pretreat(tasks, source, notifyUrl, callback) {
     tasks = new Buffer(JSON.stringify(tasks)).toString('base64');
     let data = {
       service: this.bucket,
       source: source,
-      notify_url: notify_url,
+      notify_url: notifyUrl,
       tasks: tasks,
       accept: 'json'
     };
     this._requestsPretreat(data, callback);
   }
 
-  status(task_ids, callback) {
+  status(taskIDs, callback) {
     let data = {
       service: this.bucket,
-      task_ids: task_ids
+      task_ids: taskIDs
     };
     this._requestsStatus(data, callback);
   }
 
-  result(task_ids, callback) {
+  result(taskIDs, callback) {
     let data = {
       service: this.bucket,
-      task_ids: task_ids
+      task_ids: taskIDs
     };
     this._requestsResult(data, callback);
   }
