@@ -50,13 +50,13 @@ av.pretreat(tasks, source, notify_url, (err, data) => {
 [进度查询](http://docs.upyun.com/cloud/av/#_6)
 
 ```
-let task_ids = '0e9b311fd13de3067cdcb082996e1c6d';
+let task_ids = '0e9b311fd13de3067cdcb082996e1c6d,35f0148d414a688a275bf915ba7cebb2';
 
 av.status(task_ids, (err, body) => {
   console.log(err, body);
 });
 /**
- * null '{"tasks":{"0e9b311fd13de3067cdcb082996e1c6d":100}}'
+ * null '{"tasks":{"0e9b311fd13de3067cdcb082996e1c6d":100,"35f0148d414a688a275bf915ba7cebb2":null}}'
  */
 ```
 
@@ -72,12 +72,13 @@ av.result(task_ids, (err, body) => {
  * null { tasks:
  * { '0e9b311fd13de3067cdcb082996e1c6d':
  *   { bucket_name: 'sl-file',
- *      timestamp: 1486192670,
- *      task_id: '0e9b311fd13de3067cdcb082996e1c6d',
- *      status_code: 200,
- *      signature: 'dd7326b31c2b2e11',
- *      path: [Object],
- *      info: [Object],
- *      description: 'OK' } } }
+ *     timestamp: 1486192670,
+ *     task_id: '0e9b311fd13de3067cdcb082996e1c6d',
+ *     status_code: 200,
+ *     signature: 'dd7326b31c2b2e11',
+ *     path: [Object],
+ *     info: [Object],
+ *     description: 'OK' },
+ *   "35f0148d414a688a275bf915ba7cebb2":null } }
  */
 ```
