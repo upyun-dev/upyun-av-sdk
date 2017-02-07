@@ -8,6 +8,7 @@
     "test-cov": "NODE_ENV=test nyc --check-coverage=true --reporter=text --reporter=lcov mocha",
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
+    "postinstall": "npm run compile",
     "lint": "gulp"
   },
   "author": "taevas (yu.zheng@upai.com)",
