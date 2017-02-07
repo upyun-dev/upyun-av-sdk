@@ -6,7 +6,7 @@
   "scripts": {
     "test": "NODE_ENV=test mocha --compilers js:babel-core/register",
     "test-cov": "NODE_ENV=test nyc --check-coverage=true --reporter=text --reporter=lcov mocha",
-    "compile": "./node_modules/.bin/babel -d lib/ src/",
+    "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
     "lint": "gulp"
   },
