@@ -1,5 +1,5 @@
 {
-  "name": "upyun-av-sdk",
+  "name": "@upyun/upyun-av-sdk",
   "version": "0.1.0",
   "description": "",
   "main": "lib/av.js",
@@ -8,17 +8,18 @@
     "test-cov": "NODE_ENV=test nyc --check-coverage=true --reporter=text --reporter=lcov mocha",
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile",
-    "postinstall": "npm run compile",
+    "postpublish": "rm -rf lib/",
     "lint": "gulp"
   },
-  "author": "taevas (yu.zheng@upai.com)",
+  "author": "taevas",
+  "email": "yu.zheng@upai.com",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.79.0",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-cli": "^6.22.2"
+    "request": "^2.79.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "gulp": "^3.9.1",
     "gulp-jscs": "^4.0.0",
     "gulp-jshint": "^2.0.4",
